@@ -1,0 +1,282 @@
+<?php
+// $subject = 'google-_.com';
+// $result = preg_split('/(?=\.[^.]+$)/', $subject);
+// $result[0];
+// echo  strlen($result[0]);
+
+
+
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #1abc9c;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
+}
+</style>
+</head>
+<body class="bg-dark text-white">
+<div class="container">
+<?php
+$year=date("Y");
+$start=date('l', strtotime("January 1, $year"));
+
+?>
+<h1><center>PHP  Calendar</center></h1>
+
+<div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      <?php echo date("F"); ?><br>
+      <span style="font-size:18px"><?php echo date("Y"); ?></span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+ <?php
+// $start=date('l', strtotime("January 1, $year"));
+
+// switch ($start) {
+  // case "Monday":
+    // echo '<ul class="weekdays">
+  // <li>Mo</li>
+  // <li>Tu</li>
+  // <li>We</li>
+  // <li>Th</li>
+  // <li>Fr</li>
+  // <li>Sa</li>
+  // <li>Su</li>
+// </ul>';
+    // break;
+      // case "Tuesday":
+    // echo '<ul class="weekdays">
+
+  // <li>Tu</li>
+  // <li>We</li>
+  // <li>Th</li>
+  // <li>Fr</li>
+  // <li>Sa</li>
+  // <li>Su</li>
+    // <li>Mo</li>
+// </ul>';
+    // break;
+          // case "Wednesday":
+    // echo '<ul class="weekdays">
+
+  // <li>We</li>
+  // <li>Th</li>
+  // <li>Fr</li>
+  // <li>Sa</li>
+  // <li>Su</li>
+   // <li>Mo</li>
+  // <li>Tu</li>
+// </ul>';
+    // break;
+      // case "Thursday":
+    // echo '<ul class="weekdays">
+
+  // <li>Th</li>
+  // <li>Fr</li>
+  // <li>Sa</li>
+  // <li>Su</li>
+  // <li>Mo</li>
+  // <li>Tu</li>
+  // <li>We</li>
+// </ul>';
+    // break;
+  // case "Friday":
+    // echo '<ul class="weekdays">
+
+  // <li>Fr</li>
+  // <li>Sa</li>
+  // <li>Su</li>
+  // <li>Mo</li>
+  // <li>Tu</li>
+  // <li>We</li>
+  // <li>Th</li>
+// </ul>';
+    // break;
+      // case "Saturday":
+    // echo '<ul class="weekdays">
+
+  // <li>Sa</li>
+  // <li>Su</li>
+  // <li>Mo</li>
+  // <li>Tu</li>
+  // <li>We</li>
+  // <li>Th</li>
+  // <li>Fr</li>
+// </ul>';
+    // break;
+      // case "Sunday":
+    // echo '<ul class="weekdays">
+   // <li>Su</li>
+  // <li>Mo</li>
+  // <li>Tu</li>
+  // <li>We</li>
+  // <li>Th</li>
+  // <li>Fr</li>
+  // <li>Sa</li>
+ 
+// </ul>';
+    // break;
+  // case "green":
+    // echo "Your favorite color is green!";
+    // break;
+  // default:
+    // echo "Your favorite color is neither red, blue, nor green!";
+// }
+// ?>
+</ul>
+
+<ul class="days">  
+<?php 
+$start=date('l', strtotime("January 1, $year"));
+
+switch ($start) {
+  case "Friday":
+   echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+    echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+   break;
+     case "Monday":
+ 
+   break;
+     case "Tuesday":
+   echo '  <li><span class=""> </span></li>';
+ 
+   break;
+      case "Wednesday":
+   echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+   break;
+        case "Thursday":
+   echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+   break;
+           case "Saturday":
+   echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+    echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+   break;
+           case "Sunday":
+   echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+      echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+   echo '  <li><span class=""> </span></li>';
+   break;
+}
+
+$d=cal_days_in_month(CAL_GREGORIAN,date("m") ,date("y")); 
+$status='';
+for ($x = 1; $x <= $d; $x++) {
+	if ($x ==  date("j")) {$status='active';}else {$status='';}
+  echo '  <li><span class="'.$status.'">'.$x.'</span></li>';
+}
+ ?>
+</ul>
+</div>
+</body>
+</html>
